@@ -55,7 +55,7 @@ employees.sex,
 salaries.salary
 FROM employees
 LEFT JOIN salaries
-ON employees.emp_no = salaries.emp_no
+ON employees.emp_no = salaries.emp_no;
 
 --2  List first name, last name, and hire date for employees who were hired in 1986.
 select first_name, last_name, hire_date
@@ -76,7 +76,7 @@ from dept_manager
 left join department
 on dept_manager.dept_no = department.dept_no
 left join employees
-on dept_manager.emp_no = employees.emp_no
+on dept_manager.emp_no = employees.emp_no;
 
 -- 4 List the department of each employee with the following information: employee number, last name, first name, and department name.
 
@@ -88,7 +88,7 @@ FROM dept_emp
 LEFT JOIN department
 ON dept_emp.dept_no = department.dept_no
 LEFT JOIN employees
-ON dept_emp.emp_no = employees.emp_no
+ON dept_emp.emp_no = employees.emp_no;
 
 
 --5 List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
@@ -97,7 +97,7 @@ SELECT employees.first_name,
 employees.last_name,
 employees.sex
 FROM employees
-WHERE first_name = 'Hercules' AND last_name like 'B%'
+WHERE first_name = 'Hercules' AND last_name like 'B%';
 
 --6 List all employees in the Sales department, including their employee number, last name, first name, and department name.
 select * from department
@@ -113,7 +113,7 @@ LEFT JOIN department
 ON dept_emp.dept_no = department.dept_no
 LEFT JOIN employees
 ON dept_emp.emp_no = employees.emp_no
-where department.dept_name ='Sales'
+where department.dept_name ='Sales';
 
 
 -- 7 List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
@@ -128,7 +128,7 @@ LEFT JOIN department
 ON dept_emp.dept_no = department.dept_no
 LEFT JOIN employees
 ON dept_emp.emp_no = employees.emp_no
-where department.dept_name ='Sales' OR dept_name= 'Development'
+where department.dept_name ='Sales' OR dept_name= 'Development';
 
 -- 8 In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
@@ -136,5 +136,6 @@ select employees.last_name,
 count(employees.last_name)
 from employees
 group by last_name
-order by count(last_name) desc
+order by count(last_name) desc;
+
 
