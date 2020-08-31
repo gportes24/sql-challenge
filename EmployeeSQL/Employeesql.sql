@@ -63,9 +63,9 @@ FROM employees
 WHERE DATE_PART('year',hire_date) = 1986;
 
 --3 List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
-select * from dept_manager
-select * from  department
-select * from employees
+select * from dept_manager;
+select * from  department;
+select * from employees;
 
 select dept_manager.dept_no,
 department.dept_name,
